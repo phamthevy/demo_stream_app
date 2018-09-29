@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/btn_connect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:text="Connect" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_status"
+        android:layout_toRightOf="@+id/btn_connect"
+        android:layout_alignBaseline="@+id/btn_connect"
+        android:text="Disconnected !"
+        android:textColor="@color/red"
+        android:gravity="center"
+        android:layout_alignParentRight="true"/>
+
+    <VideoView
+        android:layout_width="match_parent"
+        android:layout_height="350dp"
+        android:id="@+id/video_view"
+        android:layout_below="@+id/btn_connect"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/video_view">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btn_up"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:text=" Up  "
+            android:enabled="false"
+            android:gravity="center"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btn_left"
+            android:text="Left "
+            android:layout_below="@id/btn_up"
+            android:paddingLeft="5dp"
+            android:enabled="false"
+            android:layout_toLeftOf="@id/view_center"/>
+
+        <View
+            android:id="@+id/view_center"
+            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:visibility="invisible"
+            android:layout_below="@id/btn_up"
+            android:layout_centerHorizontal="true"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btn_right"
+            android:layout_below="@id/btn_up"
+            android:layout_toRightOf="@id/view_center"
+            android:paddingRight="5dp"
+            android:text="Right"
+            android:enabled="false"
+            android:layout_alignBaseline="@id/btn_left" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btn_down"
+            android:text="Down "
+            android:layout_below="@id/btn_left"
+            android:layout_centerHorizontal="true"
+            android:enabled="false"
+            android:gravity="center"/>
+    </RelativeLayout>
+
+</RelativeLayout>
